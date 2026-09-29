@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes.cep_routes import router as cep_router
+from routes.conversao_routes import router as cep_router
 
 app = FastAPI()
 

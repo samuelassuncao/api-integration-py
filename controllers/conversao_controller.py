@@ -11,3 +11,10 @@ class ConversaoController:
             return conversao
         except Exception as error:
             raise HTTPException(status_code=404, detail=str(error))
+        
+    async def get_previous_days_currency(self, moedas:str, numero_dias: int):
+        try:
+            conversao_ultimos_dias = await conversao_service.get_previous_days_currency(moedas, numero_dias)
+            return conversao_ultimos_dias
+        except Exception as error:
+            raise HTTPException(status_code=404, detail=str(error))
