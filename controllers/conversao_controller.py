@@ -1,4 +1,3 @@
-import re
 from fastapi import HTTPException
 from services.conversao_service import ConversaoService
 

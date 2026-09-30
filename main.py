@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from routes.conversao_routes import router as conversao_router
-from routes.cep_routes import router as cep_routes
+from routes.cep_routes import router as cep_router
+from routes.trivia_routes import router as trivia_router
 
 app = FastAPI()
 
-# Inclui as rotas do arquivo de rotas. 
-# Se quiser o prefixo de volta no futuro, basta usar: app.include_router(cep_router, prefix="/api")
 app.include_router(conversao_router)
-app.include_router(cep_routes)
+app.include_router(cep_router)
+app.include_router(trivia_router)
 
 # Mensagem opcional para verificar se o arquivo principal está online
 @app.get("/")
